@@ -1,0 +1,8 @@
+1. String literal
+2. int vs Integer (Wrapper class)
+3. Overflow -> Interger.MAX_VALUE + 1 = Integer.MIN_VALUE
+	    -> 2147483647         + 1 = -2147483648
+4. Underflow -> Interger.MIN_VALUE - 1 = Integer.MAX_VALUE
+	     -> -2147483648        - 1 = 2147483647
+5. Type Casting (or Narrowing Conversion) VS Type Conversion (or Widening Conversion)
+
