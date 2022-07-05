@@ -45,6 +45,9 @@ public class LeapYear {
     }
 
     public static boolean isLeapYear (int year){
+
+    // Method 1
+
 //        if (year >= 1 && year <= 9999){
 //            if ((year % 4 == 0)){
 //                if ((year % 100 == 0)) {
@@ -59,14 +62,26 @@ public class LeapYear {
 //        }
 //        return false;
 
+
+
+    // Method - 2
+
+//        if (year >= 1 && year <= 9999){
+//            if (((year % 4 == 0) && (year % 100 != 0)) || ((year % 100 == 0) && (year % 400 == 0))){
+//                return true;
+//            }
+//        }
+//        return false;
+
+
+
+    // Method - 3
         if (year >= 1 && year <= 9999){
-            if ((year % 4 == 0) && (year % 100 != 0)){
-                return true;
-            }
-            else if ((year % 100 == 0) && (year % 400 == 0)){
+            if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)){
                 return true;
             }
         }
         return false;
+
     }
 }
