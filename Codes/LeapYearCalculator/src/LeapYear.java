@@ -64,7 +64,21 @@ public class LeapYear {
 
 
 
-    // Method - 2
+        // Method - 2
+
+//        if (year >= 1 && year <= 9999){
+//            if ((year % 4 == 0) && (year % 100 != 0)){
+//                return true;
+//            }
+//            else if ((year % 100 == 0) && (year % 400 == 0)){
+//                return true;
+//            }
+//        }
+//        return false;
+
+
+
+        // Method - 3
 
 //        if (year >= 1 && year <= 9999){
 //            if (((year % 4 == 0) && (year % 100 != 0)) || ((year % 100 == 0) && (year % 400 == 0))){
@@ -75,7 +89,7 @@ public class LeapYear {
 
 
 
-    // Method - 3
+    // Method - 4
         if (year >= 1 && year <= 9999){
             if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)){
                 return true;
