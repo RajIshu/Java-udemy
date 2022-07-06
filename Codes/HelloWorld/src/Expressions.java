@@ -1,5 +1,9 @@
 public class Expressions {
     public static void main(String args[]){
+        System.out.println("Hello, World!!");
+
+    //CHALLENGE
+        // Replace your name with 'World' and print it.
         System.out.println("Hello, Ishu!!");
 
         int myFirstNumber = (10 + 5) + (2 * 10);
