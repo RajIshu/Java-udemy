@@ -1,4 +1,6 @@
 /*
+Problem Description:
+
 Write a method printYearsAndDays with parameter of type long named minutes.
 
 The method should not return anything (void) and it needs to calculate the years and days from the minutes parameter.
@@ -45,21 +47,28 @@ NOTES
 
 public class MinutesToYearsAndDays {
 
-    static final String INVALID_VALUE_MESSAGE = "Invalid value.";
+    static final String INVALID_VALUE_MESSAGE = "Invalid Value";
 
     public static void main(String[] args) {
-
+        printYearsAndDays(525600);
+        printYearsAndDays(1051200);
+        printYearsAndDays(561600);
     }
 
     public static void printYearsAndDays (long minutes) {
         if (minutes < 0){
             System.out.println(INVALID_VALUE_MESSAGE);
         }
+        else {
+            long minutesInAYear = 365 * 24 * 60;
+            long minutesInADay = 24 * 60;
 
-        long minutesInAYear = 365 * 24 * 60;
-        long minutesInADay = 24 * 60;
+            long years = minutes / minutesInAYear;
+            long days = (minutes % minutesInAYear) / minutesInADay;
 
-        long years = minutes / minutesInAYear;
-        long days = (minutes % minutesInAYear) / minutesInADay;
+            System.out.println(minutes + " min = " + years + " y and " + days + " d");
+
+        }
+
     }
 }
