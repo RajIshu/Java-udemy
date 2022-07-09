@@ -33,12 +33,12 @@ NOTE: Do not add a main method to the solution code.
 public class LargestPrime {
 
     public static void main(String[] args) {
-//        System.out.println(getLargestPrime (21));
-//        System.out.println(getLargestPrime (217));
-//        System.out.println(getLargestPrime (0));
-//        System.out.println(getLargestPrime (45));
-//        System.out.println(getLargestPrime (-1));
-//        System.out.println(getLargestPrime (7));
+        System.out.println(getLargestPrime (21));
+        System.out.println(getLargestPrime (217));
+        System.out.println(getLargestPrime (0));
+        System.out.println(getLargestPrime (45));
+        System.out.println(getLargestPrime (-1));
+        System.out.println(getLargestPrime (7));
         System.out.println(getLargestPrime (12));
 
     }
@@ -72,26 +72,4 @@ public class LargestPrime {
         return -1;
     }
 
-//    public static boolean isPrime(int num){
-//        if(num == 2){
-//            return true;
-//        }
-//        else if(num <= 1){
-//            return false;
-//        }
-//        else if(num % 2 == 0){
-//            return false;
-//        }
-//        else{
-//            // checking for odds only
-//            for(int i = 3; i <= num/2; i+=2){
-//                // we can use Math.sqrt(num) instead of num/2, it would have saved lots of time
-//                // Comparison is done above
-//                if(num % i == 0){
-//                    return false;
-//                }
-//            }
-//            return true;
-//        }
-//    }
 }
