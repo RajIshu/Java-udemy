@@ -42,7 +42,7 @@ public class ReadingUserInput {
             }else {
                 System.out.println("Invalid Number");
             }
-            sc.nextLine(); // handle end of line (enter key)
+             sc.nextLine(); // handle end of line (enter key)
         }
 
         System.out.println("Sum: " + sum);
