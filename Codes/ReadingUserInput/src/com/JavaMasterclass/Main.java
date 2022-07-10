@@ -18,27 +18,32 @@ public class Main {
         // object and returning a reference to that memory.
 
         System.out.print("Enter your year of birth: ");
-        int yearOfBirth = scanner.nextInt();
-        scanner.nextLine(); // for handling next line character or enter key
 
-        // nextInt() scans int value from input stream
+        boolean hasNextInt = scanner.hasNextInt();
 
+        // To avoid error caused due to string value entered in nextInt()
+        if(hasNextInt){
+            int yearOfBirth = scanner.nextInt();
+            scanner.nextLine(); // for handling next line character or enter key
 
-        System.out.print("Enter your name: ");
-        String name = scanner.nextLine();
-
-        // The nextLine() method of the java.util.Scanner class scans from the current
-        // position until it finds a line separator delimiter.
-        // The line separator or delimiter can be anything like '\n' or 'press Enter' etc.
+            // nextInt() scans int value from input stream
 
 
-        int age = 2022 - yearOfBirth;
+            System.out.print("Enter your name: ");
+            String name = scanner.nextLine();
+
+            // The nextLine() method of the java.util.Scanner class scans from the current
+            // position until it finds a line separator delimiter.
+            // The line separator or delimiter can be anything like '\n' or 'press Enter' etc.
 
 
-    // .useDelimiter()
-        //The useDelimiter() is a Java Scanner class method which is used to set the
-        // delimiting pattern of the Scanner
-        /* Example:
+            int age = 2022 - yearOfBirth;
+
+
+            // .useDelimiter()
+            //The useDelimiter() is a Java Scanner class method which is used to set the
+            // delimiting pattern of the Scanner
+            /* Example:
                  String input = "1 fish 2 fish red fish blue fish";
                  Scanner s = new Scanner(input).useDelimiter("\\s*fish\\s*");
                  System.out.println(s.nextInt());
@@ -57,9 +62,20 @@ public class Main {
                2
                red
                blue
-        */
+            */
 
-        System.out.println("Your name is " + name + ", and you are " + age + " years old.");
+            if(age >= 0 && age <= 100){
+                System.out.println("Your name is " + name + ", and you are " + age + " years old.");
+            } else {
+                System.out.println("Invalid Year of Birth.");
+            }
+        }
+        else {
+            System.out.println("Unable to parse year of birth.");
+        }
+
+
+
         System.out.println("Current Delimiter: " + scanner.delimiter());
 
         //.delimiter() is used to get the Pattern which the Scanner
