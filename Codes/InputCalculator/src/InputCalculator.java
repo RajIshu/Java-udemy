@@ -60,4 +60,12 @@ NOTE: Do not add the main method to the solution code.
 
 
 public class InputCalculator {
+
+    public static void main(String[] args) {
+
+    }
+
+    public static void inputThenPrintSumAndAverage (){
+        
+    }
 }
