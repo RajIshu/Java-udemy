@@ -66,6 +66,6 @@ public class InputCalculator {
     }
 
     public static void inputThenPrintSumAndAverage (){
-        
+
     }
 }
