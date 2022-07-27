@@ -59,13 +59,35 @@ NOTE: Do not add the main method to the solution code.
 */
 
 
+import java.util.Scanner;
+
 public class InputCalculator {
 
     public static void main(String[] args) {
-
+        inputThenPrintSumAndAverage();
     }
 
     public static void inputThenPrintSumAndAverage (){
+        Scanner sc = new Scanner(System.in);
+
+        double sum = 0, count = 0;
+
+        boolean hasInt;
+
+        while(true){
+            // System.out.println("Enter a number: ");
+            hasInt = sc.hasNextInt();
+            if(hasInt){
+                sum += sc.nextInt();
+                count++;
+            }
+            else {
+                break;
+            }
+            sc.nextLine(); // It's best to use it for avoiding unpredicted error.
+        }
+
+        System.out.println("SUM = " + (int)sum + " AVG = " + Math.round(sum/count));
 
     }
 }
