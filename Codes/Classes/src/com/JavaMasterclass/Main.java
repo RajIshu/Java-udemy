@@ -28,6 +28,28 @@ public class Main {
 	        2. Class give us a power to define our own data type called User-defined Data Type.
 	*/
 
+        Car mahindra = new Car();
+        Car tata = new Car();
 
+        // mahindra.model = "XUV300"; // can be used without defining set-Method.
+
+        // mahindra = null;
+
+        System.out.println("Model is " + mahindra.getModel());
+        /* Here we will get:
+            Model is null
+
+           Null is actually the default state for a class and also for a String.
+        */
+
+
+        mahindra.setModel("XUV300");
+
+        System.out.println("Model is " + mahindra.getModel());
+
+
+        mahindra.setModel("XUV700");
+
+        System.out.println("Model is " + mahindra.getModel());
     }
 }
