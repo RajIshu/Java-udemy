@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 	 /* CHALLENGE:
-	 
+
          Create a new class for a bank account
          Create fields for the account number, balance, customer name,
          email and phone number.
