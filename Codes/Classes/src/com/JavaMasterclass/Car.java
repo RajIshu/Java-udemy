@@ -21,7 +21,7 @@ public class Car {
 
     private int doors;
     private int wheels;
-    // Using private access modifier will not let objects created from this class in main class
+    // Using private access modifier will not let objects, created from this class in main class,
     // to use these fields or variables, but public access modifiers can let them use.
     // public String model;
 
