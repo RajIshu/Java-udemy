@@ -21,11 +21,11 @@ public class Animal {
 
     // Behaviour or Methods
     public void eat(){
-
+        System.out.println("Animal.eat() called.");
     }
 
     public void move(){
-        
+        System.out.println("Animal.move() called.");
     }
 
 

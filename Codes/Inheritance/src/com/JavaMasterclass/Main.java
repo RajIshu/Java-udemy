@@ -25,5 +25,11 @@ public class Main {
 	        -
 
 	*/
+
+        Animal weiredSpecies = new Animal("Isha", 0, 10, 5, 120);
+
+        Dog dog1 = new Dog("Bella", 4, 30, 2, 4, 1, 42, "Golden");
+
+        dog1.eat(); // Method or behaviour inherited by Dog class from Animal class.
     }
 }
