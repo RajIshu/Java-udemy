@@ -42,4 +42,27 @@ public class Dog extends Animal{
         chew();
         super.eat();
     }
+
+    public void walk(){
+        System.out.println("Dog.walk() is called.");
+        super.move(5);
+        // move(5); // This statement is equivalent to upper statement, but
+        // it may create problem if there is an overridden method in this class.
+    }
+
+    public void run(){
+        System.out.println("Dog.run() is called.");
+        move(10);
+    }
+
+    private void moveLegs(){
+        System.out.println("Dog.moveLegs() is called.");
+    }
+
+    @Override
+    public void move(int speed){
+        System.out.println("Dog.move() is called.");
+        moveLegs();
+        super.move(speed);
+    }
 }

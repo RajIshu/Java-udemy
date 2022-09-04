@@ -31,5 +31,7 @@ public class Main {
         Dog dog1 = new Dog("Bella", 4, 30, 2, 4, 1, 42, "Golden");
 
         dog1.eat(); // Method or behaviour inherited by Dog class from Animal class.
+        dog1.walk();
+        dog1.run();
     }
 }
