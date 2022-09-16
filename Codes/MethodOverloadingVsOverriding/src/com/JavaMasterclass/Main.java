@@ -70,8 +70,8 @@ public class Main {
               overridden method.
 
         Recap:
-            Overloading: Same Name, Different Parameters
-            Overriding: Same Name, Same Parameters
+            Overloading: Same Name, Different Parameters, In the same class
+            Overriding: Same Name, Same Parameters, In the superclass and the child class
 
 
         Covariant Return Type:
