@@ -38,6 +38,16 @@ public class Main {
         }
 
 
+        // Enhanced Switch-case Statement (Similar to above switch-case statement):
+        switch (switchValue) {
+            case 1 -> System.out.println("Value is 1.");
+            case 2 -> System.out.println("Value is 2.");
+            // Shortcut for multiple case statements
+            case 3, 4, 5 -> System.out.println("Value is 3 or 4 or 5.");
+            default -> System.out.println("Value is undefined.");
+        }
+
+
     // CHALLENGE
         // Create a new switch statement using char instead of int
         // create a new char variable
