@@ -85,6 +85,8 @@ class XUV300 extends Car{
     }
 
 }
+
+
 class Scorpio extends Car{
     public Scorpio(){
         super("Scorpio", 4);
@@ -100,6 +102,8 @@ class Scorpio extends Car{
         System.out.println("Scorpio Engine is starting");
     }
 }
+
+
 class Thar extends Car{
     public Thar(){
         super("Thar", 4);
@@ -115,6 +119,39 @@ class Thar extends Car{
         System.out.println("Thar Engine is starting");
     }
 }
+
+
+// Created and moved in main class using Refactor
+class Seltos extends Car{
+    public Seltos(){
+        super("Scorpio", 4);
+    }
+
+    @Override
+    public void setSpeed() {
+        super.setSpeed(40);
+    }
+
+    @Override
+    public void startEngine() {
+        System.out.println(getClass().getSimpleName() + " Engine is starting (Simple Name)");
+        System.out.println(getClass().getName() + " Engine is starting (Qualified Name)");
+        /* getClass(): It is a method which returns the runtime class of this object.
+
+           getSimpleName(): It is a method which returns the "simple name" of this class
+           in the form of String. If this class is anonymous, then this method returns
+           empty string.
+           Example: Seltos (here)
+
+           getName(): It is a method which returns the "qualified name" of this class
+           in the form of String. Qualified name is a sequence of simple names separated
+           by dots.
+           Example: com.JavaMasterclass.Seltos (here)
+        */
+    }
+}
+
+
 
 class Unknown extends Car{
     public Unknown(){
@@ -158,6 +195,61 @@ public class Main {
             car.brake();
             System.out.println(" ");
         }
+
+
+    /*  ANONYMOUS CLASS or INLINE CLASS:
+        ----------------------
+        In Java, a class can contain another class known as nested class. It's possible
+        to create a nested class without giving any name.
+
+        A nested class that doesn't have any name is known as an anonymous class.
+
+        An anonymous class must be defined inside another class. Hence, it is also known
+        as an anonymous inner class.
+
+        Its syntax is:
+
+            class outerClass {
+                // defining anonymous class or anonymous inner class
+                object1 = new Type(parameterList) {
+                     // body of the anonymous class
+                };
+            }
+    */
+
+        Car Creta = new Car("Creta", 3){
+            @Override
+            public void setSpeed() {
+                super.setSpeed(40);
+            }
+
+            @Override
+            public void startEngine() {
+                System.out.println("Creta Engine is starting");
+            }
+        };
+
+        System.out.println("Car #" + 5 +
+                " : " + Car.getName() + "\n" +
+                "Cylinder: " + Creta.getCylinders());
+        Creta.startEngine();
+        Creta.setSpeed();
+        Creta.accelerate(25);
+        Creta.getSpeed();
+        Creta.brake();
+        System.out.println(" ");
+
+
+        Car seltos = new Seltos();
+        System.out.println("Car #" + 6 +
+                " : " + seltos.getName() + "\n" +
+                "Cylinder: " + seltos.getCylinders());
+        seltos.startEngine();
+        seltos.setSpeed();
+        seltos.accelerate(25);
+        seltos.getSpeed();
+        seltos.brake();
+        System.out.println(" ");
     }
 
     public static Car randomCar() {
