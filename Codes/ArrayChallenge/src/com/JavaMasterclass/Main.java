@@ -22,12 +22,14 @@ public class Main {
 
 	*/
 
-        int[] arr = new int[] {3,2,5,1,6,8,7,4,9};
+//        int[] arr = new int[] {3,2,5,1,6,8,8,12,7,9};
         // System.out.println(arr.length);
 
-//        arr = sortIntegers(arr);
-//
-//        printArray(arr);
+        int[] arr = getIntegers(14);
+
+        arr = sortIntegers(arr);
+
+        printArray(arr);
     }
 
     public static int[] getIntegers(int number){
@@ -50,55 +52,55 @@ public class Main {
         }
     }
 
-    public static int[] sortIntegers(int[] array){
-        int random = (int) (Math.random() * array.length);
-
-        int[] values = new int[array.length];
-
-        values[0] = array[random];
-
-        for (int i = 0; i < array.length; i++){
-            if(array[i] < array[random]){
-                if(i == 0){
-                    int c = values[i];
-                    values[i] = array[i];
-                    values = shiftPlace(values, c, j+1);
-                    shiftPlace(values, )
-                }
-            }
-        }
-        return array;
-    }
-
 //    public static int[] sortIntegers(int[] array){
+//        int random = (int) (Math.random() * array.length);
+//
 //        int[] values = new int[array.length];
-//        int k = 0;
+//
+//        values[0] = array[random];
+//
 //        for (int i = 0; i < array.length; i++){
-//            if(i == 0){
-//                values[k] = array[i];
-//                k++;
-//            }
-//            else{
-//                for (int j = 0; j < i; j++){
-//                    if(array[i] >= values[j]){
-//                        values[k] = array[i];
-//                        k++;
-//                        break;
-//                    }
-//                    else if(array[i] < values[j]){
-//                        int c = values[j];
-//                        values[j] = array[i];
-//                        values = shiftPlace(values, c, j+1);
-//                        k++;
-//                        break;
-//                    }
+//            if(array[i] < array[random]){
+//                if(i == 0){
+//                    int c = values[i];
+//                    values[i] = array[i];
+//                    values = shiftPlace(values, c, j+1);
+//                    shiftPlace(values, )
 //                }
 //            }
 //        }
-//
-//        return values;
+//        return array;
 //    }
-//
+
+    public static int[] sortIntegers(int[] array){
+        int[] values = new int[array.length];
+        int k = 0;
+        for (int i = 0; i < array.length; i++){
+            if(i == 0){
+                values[k] = array[i];
+                k++;
+            }
+            else{
+                for (int j = 0; j < i; j++){
+                    if(array[i] >= values[j] && array[i] >= values[k-1]){
+                        values[k] = array[i];
+                        k++;
+                        break;
+                    }
+                    else if(array[i] < values[j]){
+                        int c = values[j];
+                        values[j] = array[i];
+                        values = shiftPlace(values, c, j+1);
+                        k++;
+                        break;
+                    }
+                }
+            }
+        }
+
+        return values;
+    }
+
     public static int[] shiftPlace(int[] arr, int displacedElement, int position){
         int[] newArray = new int[arr.length];
 
