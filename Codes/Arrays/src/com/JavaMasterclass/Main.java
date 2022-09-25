@@ -1,5 +1,6 @@
 package com.JavaMasterclass;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -10,14 +11,34 @@ public class Main {
 	/*
 	    ARRAYS:
 	    ------
-        Java array is an object which contains elements of a similar data type.
+        An array is a data structure that allows you to store multiple values of the same type
+        into a single variable.
+
+        The default values of numeric array elements are set to 'zero' i.e., for int array, all
+        the array elements are initialized to 'zero'.
+        For boolean array elements they would be initialized to 'false'.
+        For string or other objects, elements would be initialized to 'null'.
+
         The direct superclass of an array type is Object.
 
         Additionally, The elements of an array are stored in a contiguous memory location.
 
         It is a data structure where we store similar elements.
 
+        Arrays are zero indexed: an array with n elements is indexed from 0 to n-1, for
+        example 10 elements index range is from 0 to 9.
+
+        FACT: There are 20 Programming Languages in the World where the array index starts
+        from 1 and not from 0. Some popular languages include R, COBOL, Matlab and Julia.
+
         Arrays in java are of fixed size.
+
+        If we try to access index that is out of range Java will give us an 1
+        ArrayIndexOutOfBoundsException, which indicates that the index is out of range in
+        other words out of bounds.
+
+        To access array elements we use the square braces [ and ], also known as array access
+        operator.
 
 	*/
 
@@ -34,7 +55,8 @@ public class Main {
 //        myIntArray[7] = 8;
 
 
-        // Shortcut for assigning values
+        // Shortcut for assigning values also known as Inline Initialization and the
+        // array is known as anonymous array. { and } are called as Array Initializer Blocks.
         int[] myIntArray = {1,2,3,4,5,6,7,8,9,10};
 
         // Another way to assign values

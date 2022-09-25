@@ -1,5 +1,6 @@
 package com.JavaMasterclass;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -30,6 +31,11 @@ public class Main {
         arr = sortIntegers(arr);
 
         printArray(arr);
+
+
+        // Arrays.copyOf(int[] Array, int length) method is used to copy one array to another array.
+        int[] oneMoreArray = Arrays.copyOf(arr, arr.length);
+
     }
 
     public static int[] getIntegers(int number){
