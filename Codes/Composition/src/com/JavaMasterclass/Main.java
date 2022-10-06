@@ -31,7 +31,7 @@ public class Main {
             ==> private Dimensions dimensions;
             ==> Case isn't a Dimension, but Case has a Dimension.
 
-        Simply, we can say that when a class is defined inside an another class as a FIELD,
+        Simply, we can say that when a class is defined inside another class as a FIELD,
         then there is Composition.
 
 
