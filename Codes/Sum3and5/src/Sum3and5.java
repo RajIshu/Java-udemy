@@ -27,7 +27,7 @@ public class Sum3and5 {
                 break;
             }
         }
-        System.out.println("Total Sum = " + summa);
+        System.out.println(" Total Sum = " + summa);
     }
 
 }
