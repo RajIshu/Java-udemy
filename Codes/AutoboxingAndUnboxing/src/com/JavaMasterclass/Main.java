@@ -79,6 +79,45 @@ public class Main {
 
         */
 
+        Integer intWrapperClass = new Integer(57);
 
+        ArrayList<Integer> integerWrapperArrayList = new ArrayList<>();
+        ArrayList<Integer> integerWrapperArrayList2 = new ArrayList<>();
+
+        for(int i = 0; i <= 10; i++){
+            integerWrapperArrayList.add(i); // passing int as primitive type
+            integerWrapperArrayList2.add(Integer.valueOf(i)); // passing int as an Object
+            // valueOf() is used to convert primitive data type 'int' to an instance of Integer Wrapper class,
+            // and it is called as Autoboxing
+        }
+
+        System.out.println(integerWrapperArrayList);
+
+//        System.out.println("Size = " + integerWrapperArrayList.size());
+        for(int i = 0; i < integerWrapperArrayList.size(); i++){
+            System.out.println(i + " --> " + integerWrapperArrayList.get(i).intValue());
+            // intValue() is used to convert instance of Integer Wrapper Class into 'int' primitive type, and it
+            // is called as Unboxing
+        }
+
+        // Three ways of defining Integer Wrapper Class
+        Integer myIntValue = 56; // This code is converted to below code for 'myIntValue2' at compile time so each and every way is same.
+        Integer myIntValue2 = Integer.valueOf(56);
+        Integer myIntValue3 = new Integer(56);
+
+        System.out.println(myIntValue3);
+
+        ArrayList<Double> myDoubleArrayList = new ArrayList<>();
+
+        for(double dbl = 0.0; dbl <= 10.0; dbl += 0.5){
+            myDoubleArrayList.add(dbl); // similar to myDoubleArrayList.add(Double.valueOf(dbl));
+        }
+
+        System.out.println(myDoubleArrayList);
+
+        for(int i = 0; i < myDoubleArrayList.size(); i++){
+            System.out.println(i + " --> " + myDoubleArrayList.get(i).doubleValue());
+
+        }
     }
 }
