@@ -1,5 +1,6 @@
 package com.JavaMasterclass;
 
+// Defining interfaces name starting with 'I' makes it easy to find that this is an Interface.
 public interface ITelephone {
 //    public void powerOn();
 //    public void dial(int phoneNumber);
@@ -14,4 +15,8 @@ public interface ITelephone {
     void answer();
     boolean callPhone(int phoneNumber);
     boolean isRinging();
+
+    default String whatAmI(){
+        return "A portable Phone";
+    }
 }

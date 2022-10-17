@@ -172,5 +172,22 @@ public class Main {
 
             - With the release of Java 9, private methods are also supported in interfaces.
 	*/
+
+        ITelephone timPhone; // Why 'ITelephone' not DeskPhone as data type? Reason is given below.
+        timPhone = new DeskPhone(790387091);
+
+        timPhone.powerOn();
+        timPhone.callPhone(790387091);
+        timPhone.answer();
+
+
+        timPhone = new MobilePhone(746373883);
+        // The reassignment here works because the variable 'timPhone' has been defined with 'ITelephone'
+        // data type which is applicable to both DeskPhone and MobilePhone.
+        // If 'timPhone' was defined with 'DeskPhone', then reassignment must have given error.
+
+        timPhone.powerOn();
+        timPhone.callPhone(746373883);
+        timPhone.answer();
     }
 }
