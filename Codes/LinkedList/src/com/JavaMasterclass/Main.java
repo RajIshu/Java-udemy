@@ -26,6 +26,26 @@ public class Main {
         It also has a few disadvantages like the nodes cannot be accessed directly instead we
         need to start from the head and follow through the link to reach a node we wish to access.
 
+
+        Difference between ArrayList and LinkedList:
+        -------------------------------------------
+        1) ArrayList: The memory location for the elements of an ArrayList is contiguous.
+           LinkedList: The location for the elements of a linked list is not contagious.
+
+        2) ArrayList: ArrayList is better for storing and accessing data.
+           LinkedList: LinkedList is better for manipulating data.
+
+        3) ArrayList: An ArrayList class can act as a list only because it implements List only.
+           LinkedList: LinkedList class can act as a list and queue both because it implements List and Deque
+                       interfaces.
+
+        4) ArrayList: Manipulation with ArrayList is slow because it internally uses an array.
+                      If any element is removed from the array, the list is traversed and all the other elements are
+                      shifted in memory.
+           LinkedList: Manipulation with LinkedList is faster because in LinkedList and DoubleLinkedList there is
+                       no concept of shifting the memory bits. The list is traversed and the reference link is changed.
+
+
         Hierarchy of LinkedList Class:
         -----------------------------
         Linked List is a part of the Collection framework present in java.util package.
