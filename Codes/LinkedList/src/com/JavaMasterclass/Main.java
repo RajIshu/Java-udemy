@@ -214,7 +214,7 @@ public class Main {
                     quit = true;
                     break;
                 case 1:
-                    if(!goingForward){ // This is used so program doesn't print cities two times
+                    if(!goingForward){ // This is used, so program doesn't print cities two times
                         if(listIterator.hasNext()){
                             listIterator.next();
                         }
