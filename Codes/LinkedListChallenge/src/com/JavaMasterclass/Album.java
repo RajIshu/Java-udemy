@@ -14,6 +14,10 @@ public class Album {
         this.songs = new ArrayList<>();
     }
 
+    public String getAlbumName() {
+        return albumName;
+    }
+
     public boolean addSong(String name, double duration){
         if(findSong(name) == null) {
             songs.add(new Song(name, duration));

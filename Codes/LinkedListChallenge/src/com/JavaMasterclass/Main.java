@@ -1,6 +1,9 @@
 package com.JavaMasterclass;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.ListIterator;
+import java.util.Scanner;
 
 public class Main {
 
@@ -24,7 +27,7 @@ public class Main {
         (hint: listiterator.remove())
 	*/
 
-        private ArrayList<Album> albums = new ArrayList<>();
+        ArrayList<Album> albums = new ArrayList<>();
 
         Album album = new Album("Race", "Sonu Nigam");
         album.addSong("BeIntehaan", 2.36);
@@ -36,7 +39,7 @@ public class Main {
 
         album.printAlbum();
 
-        album.remove("Lat Lag Gayi");
+//        album.remove("Lat Lag Gayi");
 
         album.printAlbum();
 
@@ -47,5 +50,135 @@ public class Main {
         album.addSong("Jaan-E-Jigar Janeman", 5.82);
 
         albums.add(album);
+
+        printAlbumList(albums);
+
+        LinkedList<Song> playList = new LinkedList<Song>();
+//        albums.get(0).addToPlayList("Main Duniya Bhula Dunga", playList);
+//        albums.get(0).addToPlayList("Jaan-E-Jigar Janeman", playList); // Doesn't Exist
+//        albums.get(0).addToPlayList("BeIntehaan", playList);
+        albums.get(0).addToPlayList("Lat Lag Gayi", playList);
+        albums.get(0).addToPlayList("BeIntehaan", playList);
+        albums.get(0).addToPlayList("Allah Duhai Hai", playList);
+//        albums.get(0).addToPlayList(3, playList);
+//        albums.get(0).addToPlayList(5, playList);
+        albums.get(0).addToPlayList(23, playList);  // There is no track 23
+
+        play(playList);
     }
+
+    private static void printAlbumList(ArrayList<Album> albums){
+        for(int i = 0; i < albums.size(); i++){
+            System.out.println(albums.get(i).getAlbumName() + ": ");
+            albums.get(i).printAlbum();
+        }
+    }
+
+    private  static void play(LinkedList<Song> playList){
+        Scanner sc = new Scanner(System.in);
+        boolean quit = false;
+        boolean forward = true;
+        ListIterator<Song> listIterator = playList.listIterator();
+        if(playList.size() == 0){
+            System.out.println("No songs in the playlist");
+        }
+        else {
+            System.out.println("Now playing " + listIterator.next().toString());
+            printMenu();
+        }
+
+        while(!quit){
+            int action = sc.nextInt();
+            sc.nextLine();
+
+            switch (action-1){
+                case 0:
+                    System.out.println("Playlist complete");
+                    quit = true;
+                    break;
+                case 1:
+                    if(!forward){
+                        if(listIterator.hasNext()) {
+                            listIterator.next();
+                        }
+                        forward = true;
+                    }
+                    if(listIterator.hasNext()){
+                        System.out.println("Now playing " + listIterator.next().toString());
+                    }
+                    else {
+                        System.out.println("We have reached the end of the playlist");
+                        forward = false;
+                    }
+                    break;
+                case 2:
+                    if(forward){
+                        if(listIterator.hasPrevious()) {
+                            listIterator.previous();
+                        }
+                        forward = false;
+                    }
+                    if(listIterator.hasPrevious()){
+                        System.out.println("Now playing " + listIterator.previous().toString());
+                    }
+                    else {
+                        System.out.println("We are at the start of the playlist");
+                        forward = true;
+                    }
+                    break;
+                case 3:
+                    if(forward){
+                        if(listIterator.hasPrevious()){
+                            System.out.println("Replaying" + listIterator.previous().toString());
+                            forward = false;
+                        }
+                        else {
+                            System.out.println("We are at the start of the playlist");
+                        }
+                    }
+                    else {
+                        if(listIterator.hasNext()){
+                            System.out.println("Replaying " + listIterator.next().toString());
+                            forward = true;
+                        }
+                        else {
+                            System.out.println("We are at the end of the playlist");
+                        }
+                    }
+                    break;
+                case 4:
+                    printPlayList(playList);
+                    break;
+                case 5:
+                    Song songName = listIterator.next();
+                    listIterator.previous();
+                    listIterator.remove();
+                    System.out.println(songName + " removed");
+                    printMenu();
+                    break;
+                case 6:
+                    printMenu();
+                    break;
+            }
+
+        }
+    }
+
+    private static void printPlayList(LinkedList<Song> playList){
+        for(int i = 0; i < playList.size(); i++){
+            System.out.println(playList.get(i).toString());
+        }
+    }
+
+    private static void printMenu(){
+        System.out.println("Available Options:\n" +
+                "1. Quit\n" +
+                "2. Next Song\n" +
+                "3. Previous Song\n" +
+                "4. Replay\n" +
+                "5. Show Playlist\n" +
+                "6. Remove Current Song\n" +
+                "7. Show Menu");
+    }
+
 }
