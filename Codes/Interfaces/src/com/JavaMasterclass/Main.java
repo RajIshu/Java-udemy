@@ -186,6 +186,9 @@ public class Main {
         // data type which is applicable to both DeskPhone and MobilePhone.
         // If 'timPhone' was defined with 'DeskPhone', then reassignment must have given error.
 
+        // Interfaces enable us to use data types interchangeably. One variable can be interchangeably used with
+        // different data types. Example: timsPhone can be MobilePhone or DeskPhone.
+
         timPhone.powerOn();
         timPhone.callPhone(746373883);
         timPhone.answer();
