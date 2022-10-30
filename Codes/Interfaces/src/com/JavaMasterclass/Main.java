@@ -54,7 +54,10 @@ public class Main {
         -------------------
             - On implementation of an interface, we must override all of its methods.
             - Interface methods are by default abstract and public.
-            - Interface attributes are by default public, static and final.
+            - Interface attributes or variable or fields are by default public, static and final.
+                - Reason: Non-static variables require instance for accessing them and as Interfaces can not
+                          be instantiated, so it would be impossible to access non-static variables declared
+                          inside Interfaces.
             - An interface cannot contain a constructor (as it cannot be used to create objects).
 
 
