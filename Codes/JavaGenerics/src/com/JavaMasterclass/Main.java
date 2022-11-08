@@ -38,8 +38,9 @@ public class Main {
         // So it would be difficult to track these types of error in large code. So, here
         // comes Java Generics which enable us to use diamond braces (<>) to define type to the
         // Java classes.
+        // For Example, see 'Team' Class
 
-        // Parameterized Type Declaration - Use of Diamond braces
+        // Parameterized Type Declaration or Generic Class Declaration - Use of Diamond braces
         ArrayList<Integer> items1 = new ArrayList<>();
 
         items1.add(1);
@@ -52,6 +53,42 @@ public class Main {
         for(Integer i : items1) {
             System.out.println(i * 2);
         }
+
+
+        // Player and Team Section
+
+        FootballPlayer joe = new FootballPlayer("Joe");
+        BaseballPlayer pat = new BaseballPlayer("Pat");
+        SoccerPlayer beckham = new SoccerPlayer("Beckham");
+
+        Team<FootballPlayer> adelaideCrows = new Team<>("Adelaide Crows");
+        adelaideCrows.addPlayer(joe);
+//        adelaideCrows.addPlayer(pat); // Gives ERROR
+//        adelaideCrows.addPlayer(beckham); // Gives ERROR
+
+        System.out.println(adelaideCrows.numPlayers());
+
+        Team<BaseballPlayer> chicagoCubs = new Team<>("Chicago Cubs");
+        chicagoCubs.addPlayer(pat);
+
+//        Team<String> anotherTeam = new Team<>("This won't work");
+//        anotherTeam.addPlayer("Unknown"); // This will give a compilation error
+        /* Reason for Error:
+           We have type casted Player class in addPlayer method of Team class because we were using 'T' as
+           Type Parameter.
+           As we have type casted 'Player' class, so it was giving error when we passed 'String' class.
+
+           To avoid these errors, we have to restrict the types that can be used as type arguments. This is called
+           as Bound Type Parameter.
+
+           Implementation of Bound Type Parameters:
+           ---------------------------------------
+           public class Team<T extends Player> { // Here, 'T' is a bound type parameter
+           ...
+           }
+        */
+
+
 
     }
 }
