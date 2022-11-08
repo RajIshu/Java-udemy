@@ -27,7 +27,7 @@ public class Main {
         items.add(1);
         items.add(2);
         items.add(3);
-        items.add("Raj"); // This is correct, but it will give error at compile time.
+//        items.add("Raj"); // This is correct, but it will give error at compile time.
         items.add(4);
         items.add(5);
 
@@ -70,6 +70,7 @@ public class Main {
 
         Team<BaseballPlayer> chicagoCubs = new Team<>("Chicago Cubs");
         chicagoCubs.addPlayer(pat);
+//        adelaideCrows.addPlayer(beckham); // Gives ERROR
 
 //        Team<String> anotherTeam = new Team<>("This won't work");
 //        anotherTeam.addPlayer("Unknown"); // This will give a compilation error
@@ -78,15 +79,44 @@ public class Main {
            Type Parameter.
            As we have type casted 'Player' class, so it was giving error when we passed 'String' class.
 
-           To avoid these errors, we have to restrict the types that can be used as type arguments. This is called
-           as Bound Type Parameter.
+           To avoid these errors, we have to restrict the types that can be used as type arguments to a class and it's
+           subclasses. This is called as Bound Type Parameter.
 
            Implementation of Bound Type Parameters:
            ---------------------------------------
            public class Team<T extends Player> { // Here, 'T' is a bound type parameter
            ...
            }
+
+
+           Multiple Bounds:
+           --------------
+           Like multiple inheritance, multiple bounds is same. In Multiple Bound, Type Parameter can inherit from one
+           class but can implement multiple Interfaces. We can’t have more than one class in multiple bounds.
+
+           REMEMBER: In multiple bound, always extend class first then extends multiple interfaces.
+           A Class and Interfaces can be inherited or implemented using 'extends' keyword.
+
+           Implementation of Multiple bounds:
+           ---------------------------------
+           public class Team<T extends Player & IManager & ICoach> { // Here, IPeople and ICoach are Interfaces
+           ...
+           }
+
         */
+
+        Team<FootballPlayer> melbourne = new Team<>("Melbourne");
+        FootballPlayer banks = new FootballPlayer("Gordon");
+        melbourne.addPlayer(banks);
+
+        Team<FootballPlayer> hawthorn= new Team<>("Hawthorn");
+        Team<FootballPlayer> fremantle= new Team<>("Fremantle");
+
+        hawthorn.matchResult(fremantle, 1, 0);
+        hawthorn.matchResult(adelaideCrows, 3, 8);
+
+        adelaideCrows.matchResult(fremantle, 2, 1);
+//        adelaideCrows.matchResult(chicagoCubs, 1, 1); // Gives ERROR, because adelaideCrows is a Football team and chicagoCubs is a Baseball team.
 
 
 

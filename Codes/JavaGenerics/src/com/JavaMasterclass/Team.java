@@ -2,7 +2,7 @@ package com.JavaMasterclass;
 
 import java.util.ArrayList;
 
-public class Team<T extends Player> {
+public class Team<T extends Player> implements Comparable<Team<T>> { // Here, 'T' is a bound type parameter
     private String name;
     int played = 0;
     int won = 0;
@@ -37,16 +37,22 @@ public class Team<T extends Player> {
         return this.members.size();
     }
 
-    public void matchResult(Team opponent, int ourScore, int theirScore) {
+    public void matchResult(Team<T> opponent, int ourScore, int theirScore) {
+        String message;
+
         if(ourScore > theirScore) {
             won++;
+            message = " beat ";
         } else if(ourScore == theirScore) {
             tied++;
+            message = " drew with ";
         } else {
             lost++;
+            message = " lost to ";
         }
         played++;
         if(opponent != null) {
+            System.out.println(this.getName() + message + opponent.getName());
             opponent.matchResult(null, theirScore, ourScore);
         }
     }
@@ -55,4 +61,16 @@ public class Team<T extends Player> {
         return (won * 2) + tied;
     }
 
+    @Override
+    public int compareTo(Team<T> team) {
+        if(this.ranking() > team.ranking()){
+            return -1;
+        }
+        else if(this.ranking() < team.ranking()){
+            return 1;
+        }
+        else {
+            return 0;
+        }
+    }
 }
