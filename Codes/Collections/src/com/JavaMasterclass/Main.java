@@ -52,8 +52,6 @@ public class Main {
             System.out.println("Sorry, seat is taken");
         }
 
-        List<Integer> ls = new ArrayList<>();
-        ls.ad
 
     }
 }

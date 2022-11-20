@@ -209,6 +209,192 @@ public class ArrayList_Class {
                 lastIndexOf(Object obj): In case of multiple occurrence, it returns the position
                                          of the last occurrence of the specified element.
 
+
+         Iterate through an ArrayList:
+         ----------------------------
+         1) Using For-each loop:
+            -------------------
+            Example:
+                // creating an array list
+                ArrayList<String> animals = new ArrayList<>();
+
+                // iterate using for-each loop
+                for (String language : animals) {
+                  System.out.print(language);
+                  System.out.print(", ");
+                }
+
+
+        Some More ArrayList Methods:
+        ---------------------------
+        1) subList(int fromIndex, int toIndex): It extracts a portion of the arraylist and returns it.
+                    -> fromIndex - the starting position from where elements are extracted
+                    -> toIndex - the ending position up to which elements are extracted
+
+                    Note: The portion of arraylist contains elements starting at fromIndex and extends
+                          up to element at toIndex-1. That is, the element at toIndex is not included.
+
+                    ● Return Value:
+                         -> returns a portion of arraylist from the given arraylist
+
+        2) toArray(T[] arr): It converts an arraylist into an array and returns it.
+                    -> T[] arr (optional) - an array where elements of the arraylist are stored
+                       NOTE: Here, T specifies the type of the array.
+
+                    ● Return Value:
+                        -> returns an array of T types if the parameter T[] arr is passed to the method
+                        -> returns an array of Object type if the parameter is not passed
+
+                    ● Example:
+                      a) toArray() with Parameter:
+                                // Create a ArrayList of String type
+                                ArrayList<String> languages= new ArrayList<>();
+                                languages.add("Java");
+                                languages.add("Python");
+
+                                // Create a new array of String type
+                                String[] arr = new String[languages.size()];
+
+                                // Convert ArrayList into an array
+                                languages.toArray(arr);
+
+                                // print all elements of the array
+                                for(String item:arr) {
+                                  System.out.print(item+", ");
+                                }
+
+                     b) toArray() without Parameter:
+                                // Create a ArrayList of String type
+                                ArrayList<String> languages= new ArrayList<>();
+                                languages.add("Java");
+                                languages.add("Python");
+
+                                // Create a new array of String type
+                                Object[] obj = languages.toArray();
+
+                                // Convert ArrayList into an array
+                                languages.toArray(arr);
+
+                                // print all elements of the array
+                                for(Object item : obj) {
+                                  System.out.print(item+", ");
+                                }
+
+        3) retainAll(Collection c): It retains only those elements in the arraylist that are also
+                                    present in the specified collection.
+
+                                    It actually retains the common elements between two Collection.
+                  -> collection - only those elements present in collection are retained in the
+                                  arraylist.
+
+                    ● Return Value:
+                        -> returns true if elements are removed from the arraylist
+
+        4) trimToSize(): It trims (sets) the capacity or size of the arraylist equal to the number of
+                         elements in the arraylist.
+
+        5) replaceAll(UnaryOperator<E> operator): It replaces each elements of the arraylist with the
+                                                  result specified by the parameter.
+                  -> operator - operation to be applied to each element
+
+                  ● Example:
+                    a) Before:
+                            languages = [java, javascript, swift, python]
+
+                       Execution:
+                            languages.replaceAll(e -> e.toUpperCase());
+
+                            Here, e -> e.toUpperCase() is a lambda expression. It converts all
+                            elements of the arraylist into uppercase.
+
+                       After:
+                            languages = [JAVA, JAVASCRIPT, SWIFT, PYTHON]
+
+                    b) Before:
+                            numbers = [1, 2, 3]
+
+                       Execution:
+                            numbers.replaceAll(e -> e * 2);
+
+                            Here, e -> e * 2 - multiply each element of the arraylist by 2
+
+                       After:
+                            numbers = [2, 4, 6]
+
+
+        6) removeIf(Predicate<E> filter): It removes all elements from the arraylist that satisfy
+                                          the specified condition.
+                  -> filter - decides whether an element is to be removed
+
+                  ● Example:
+                    a) Before:
+                            numbers: [1, 2, 3, 4, 5, 6]
+
+                       Execution:
+                            // remove all even numbers
+                            numbers.removeIf(e -> (e % 2) == 0);
+
+                       After:
+                            numbers: [1, 3, 5]
+
+                    b) Before:
+                            countries: [Iceland, America, Ireland, Canada, Greenland]
+
+                       Execution:
+                            countries.removeIf(e -> e.contains("land"));
+
+                       After:
+                            countries: [America, Canada]
+
+        7) forEach(Consumer<E> action): It performs the specified action on each element of
+                                        the arraylist one by one.
+                -> action - actions to be performed on each element of the arraylist
+
+                ● Example:
+                    a) Before:
+                            numbers: [3, 4, 5, 6]
+
+                       Execution:
+                            // multiply each element by themselves
+                            // to compute the square of the number
+                            // and then print it
+                            numbers.forEach((e) -> {
+                              e = e * e;
+                              System.out.print(e + " ");
+                            });
+
+                       After:
+                            numbers: [9, 16, 25, 36]
+
+        8) iterator(): It returns an iterator to access each element of the arraylist in
+                       a proper sequence.
+                ● Return Value:
+                        -> returns an iterator to loop through the arraylist elements
+
+                        NOTE: The iterator returned by the method is stored in the variable
+                              of interface Iterator type.
+
+                ● Example:
+                        ArrayList<String> languages = new ArrayList<>();
+
+                        // Add elements in the array list
+                        languages.add("Java");
+                        languages.add("Python");
+                        languages.add("JavaScript");
+                        languages.add("Swift");
+
+                        // Create a variable of Iterator and store the iterator returned by iterator()
+                        Iterator<String> iterate = languages.iterator();
+
+                        // loop through ArrayList till it has all elements
+                        // Use methods of Iterator to access elements
+                        while(iterate.hasNext()){
+                          System.out.print(iterate.next());
+                        }
+
+                        HERE:
+                           - hasNext: returns true if there is a next element in the arraylist
+                           - next(): returns the next element in the arraylist
     */
 
 
