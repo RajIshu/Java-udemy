@@ -1,6 +1,7 @@
 package com.JavaMasterclass;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Main {
@@ -52,6 +53,22 @@ public class Main {
             System.out.println("Sorry, seat is taken");
         }
 
+
+        LinkedList<String> languages = new LinkedList<>();
+
+        // add elements in LinkedList
+        languages.add("Java");
+        languages.add("Python");
+        languages.add("JavaScript");
+        languages.add("Kotlin");
+        System.out.println("LinkedList: " + languages);
+
+        // remove elements from index 1
+        String str = languages.remove(3);
+        languages.removeAll(languages);
+        System.out.println("Removed Element: " + str);
+
+        System.out.println("Updated LinkedList: " + languages);
 
     }
 }
