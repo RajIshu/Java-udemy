@@ -4,13 +4,13 @@ public interface Set_Interface {
     /*
         SET Interface:
         -------------
-            - The Set interface allows us to store elements in different sets similar to the set in
-              mathematics.
+        - The Set interface allows us to store elements in different sets similar to the set in
+          mathematics.
 
-            - It cannot have duplicate elements.
+        - It cannot have duplicate elements.
 
-            - Java ArrayList Implementation Diagram:
-              -------------------------------------
+        - Java ArrayList Implementation Diagram:
+          -------------------------------------
 
                                 COLLECTION
                                     ⬆
@@ -33,7 +33,7 @@ public interface Set_Interface {
                         ⬆                        ⬆
                      TreeSet            ConcurrentSkipListSet
 
-         - Since Set is an interface, we cannot create objects from it.
+        - Since Set is an interface, we cannot create objects from it.
 
            In order to use functionalities of the Set interface, we can use these classes:
                a) HashSet
@@ -52,7 +52,16 @@ public interface Set_Interface {
                d) TreeSet
                     + The TreeSet class of the Java collections framework provides the functionality of a tree
                       data structure.
-                    + To learn more about HashSet, go to TreeSet Class
+                    + To learn more about HashSet, go to TreeSet Class.
+
+
+        - The Set interface is also extended by these sub-interfaces:
+
+               a) SortedSet
+                    + The SortedSet interface of the Java Collections framework is used to store elements
+                      with some order in a set.
+                    + To learn more about HashSet, go to SortedSet Interface.
+               b) NavigableSet
 
     */
 }
