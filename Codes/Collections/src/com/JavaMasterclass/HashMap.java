@@ -35,8 +35,26 @@ public class HashMap {
         Basic Operations on Java HashMap:
         --------------------------------
         1) Add elements to a HashMap:
-                + put(): To add a single element to the hashmap.
-                +
+                + put(K key, V value): To add a single element to the hashmap.
+
+                ● Return Value:
+                         -> if key is already associated with any value, returns the previously associated value
+                         -> if key is not associated with any value, returns null
+
+                         NOTE:  If key is previously associated with a null value, then also the method returns null.
+
+                ● Example:
+                        // create an HashMap
+                        HashMap<String, Integer> languages = new HashMap<>();
+
+                        // insert items to the HashMap
+                        languages.put("Java", 14);
+
+                        Here,
+                            "Java" is a Key
+                            14 is the Value
+
+        
 
     */
 }
