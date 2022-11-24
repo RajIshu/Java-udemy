@@ -28,10 +28,10 @@ public interface Set_Interface {
                                     ⬆
                                     ⬆
                         ➡ ➡ ➡ ➡ ➡ ⬅ ⬅ ⬅ ⬅ ⬅
-                        ⬆                        ⬆
-             implements ⬆                        ⬆ implements
-                        ⬆                        ⬆
-                     TreeSet            ConcurrentSkipListSet
+                       ⬆                         ⬆
+            implements ⬆                         ⬆ implements
+                       ⬆                         ⬆
+                    TreeSet            ConcurrentSkipListSet
 
         - Since Set is an interface, we cannot create objects from it.
 
@@ -62,6 +62,51 @@ public interface Set_Interface {
                       with some order in a set.
                     + To learn more about HashSet, go to SortedSet Interface.
                b) NavigableSet
+
+
+        Creating a Set:
+        --------------
+        - In Java, we must import java.util.Set package in order to use Set.
+
+        - Example:
+                // Set implementation using HashSet
+                Set<String> animals = new HashSet<>();
+
+                As, Set is an Interface so we have to use constructor of classes that have implemented
+                Set Interface.
+
+
+        Methods of Set:
+        --------------
+        The Set interface includes all the methods of the Collection interface. It's because Collection
+        is a super interface of Set.
+
+        Some of the commonly used methods of the Collection interface that's also available in the Set
+        interface are:
+
+            a) add() - adds the specified element to the set
+            b) addAll() - adds all the elements of the specified collection to the set
+            c) iterator() - returns an iterator that can be used to access elements of the set sequentially
+            d) remove() - removes the specified element from the set
+            e) removeAll() - removes all the elements from the set that is present in another specified set
+            f) retainAll() - retains all the elements in the set that are also present in another specified set
+            g) clear() - removes all the elements from the set
+            h) size() - returns the length (number of elements) of the set
+            i) toArray() - returns an array containing all the elements of the set
+            j) contains() - returns true if the set contains the specified element
+            k) containsAll() - returns true if the set contains all the elements of the specified collection
+            l) hashCode() - returns a hash code value (address of the element in the set)
+
+
+        Set Operations:
+        --------------
+        The Java Set interface allows us to perform basic mathematical set operations like union, intersection,
+        and subset.
+
+            a) Union - to get the union of two sets x and y, we can use x.addAll(y)
+            b) Intersection - to get the intersection of two sets x and y, we can use x.retainAll(y)
+            c) Difference - to calculate the difference between the two sets x and y, we can use the x.removeAll(y)
+            d) Subset - to check if x is a subset of y, we can use y.containsAll(x)
 
     */
 }
