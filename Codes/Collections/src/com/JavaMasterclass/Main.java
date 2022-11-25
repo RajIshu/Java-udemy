@@ -79,34 +79,5 @@ public class Main {
             System.out.println("Sorry, seat is taken");
         }
 
-
-        LinkedList<String> languages = new LinkedList<>();
-
-        // add elements in LinkedList
-        languages.add("Java");
-        languages.add("Python");
-        languages.add("JavaScript");
-        languages.add("Kotlin");
-        System.out.println("LinkedList: " + languages);
-
-        // remove elements from index 1
-        String str = languages.remove(3);
-        int len = languages.size();
-
-        LinkedList<String> lang = (LinkedList<String>) languages.clone();
-
-        languages.removeAll(languages);
-        ArrayList<Integer> aint = new ArrayList<>();
-        aint.ensureCapacity(3);
-
-        Deque<String> la = new LinkedList<>();
-        la.addFirst("Ram");
-        la.addLast("Rita");
-        la.offer("tina");
-
-        System.out.println("Removed Element: " + str);
-
-        System.out.println("Updated LinkedList: " + languages);
-
     }
 }
