@@ -159,6 +159,36 @@ public class HashMap_Class {
                             numbers.replaceAll((key, value) -> key * key); // lambda expression inside
 
         4) Remove HashMap Elements:
-                + 
+                + remove(key k, value v): It removes the entry if the key 'k' is associated with the value 'v'.
+
+
+        Other Methods of HashMap:
+        ------------------------
+        1) clear(): removes all mappings from the HashMap
+        2) clone(): makes the copy of the HashMap
+        3) containsKey(): checks if the specified key is present in Hashmap
+        4) containsValue(): checks if Hashmap contains the specified value
+        5) size(): returns the number of items in HashMap
+        6) isEmpty(): checks if the Hashmap is empty
+
+
+        Iterate through a HashMap:
+        -------------------------
+        Example:
+                // create a HashMap
+                HashMap<Integer, String> languages = new HashMap<>();
+
+                // iterate through keys only
+                for (Integer key : languages.keySet()) {
+                  System.out.print(key);
+                }
+
+                // iterate through key/value entries
+                for (Entry<Integer, String> entry : languages.entrySet()) {
+                  System.out.print(entry);
+                }
+
+                Note: We have used the Map.Entry in the above example. It is the nested class of the
+                      Map interface that returns a view (elements) of the map.
     */
 }

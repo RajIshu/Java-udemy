@@ -54,8 +54,26 @@ public interface Map_Interface {
            - To learn more about HashMap, open HasMap Class in this project.
 
         b) EnumMap
+
         c) LinkedHashMap
+           - The LinkedHashMap interface extends the HashMap class to store its entries in a hash table. It
+             internally maintains a doubly-linked list among all of its entries to order its entries.
+
         d) WeakHashMap
+
         e) TreeMap
+           - The TreeMap class of the Java collections framework provides the tree data structure implementation.
+           - To learn more about TreeMap, open TreeMap Class in this project.
+
+
+        Interfaces that extend Map:
+        --------------------------
+        a) SortedMap
+           - The SortedMap interface of the Java collections framework provides sorting of keys stored in a map.
+
+           - To learn more about SortedMap, open SortedMap Interface in this project.
+
+        b) NavigableMap
+        c) ConcurrentMap
     */
 }
