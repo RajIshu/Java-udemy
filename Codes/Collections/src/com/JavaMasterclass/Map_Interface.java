@@ -43,6 +43,22 @@ public interface Map_Interface {
                                       TreeMap       LinkedHashMap
 
 
+        Difference Between SortedMap and HashMap:
+        ----------------------------------------
+         _______________________________________________________________________________________________
+        |                  SortedMap                    |                   HashMap                     |
+        |_______________________________________________|_______________________________________________|
+        | 1. It does not allow null keys but can have   | 1. It allows a single null key and multiple   |
+        |    multiple null values.                      |    null values.                               |
+        |                                               |                                               |
+        | 2. It allows homogeneous values as a key      | 2. It allows heterogeneous elements because   |
+        |    because of sorting.                        |    it does not perform sorting on keys.       |
+        |                                               |                                               |
+        | 3. It is slower than HashMap.                 | 3. It is faster than SortedMap.               |
+        |_______________________________________________|_______________________________________________|
+
+
+
         Classes that implement Map:
         --------------------------
         Since Map is an interface, we cannot create objects from it.
@@ -76,4 +92,5 @@ public interface Map_Interface {
         b) NavigableMap
         c) ConcurrentMap
     */
+
 }

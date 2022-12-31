@@ -20,6 +20,9 @@ public class Main {
         classes (ArrayList, Vector, LinkedList, PriorityQueue, HashSet, LinkedHashSet, TreeSet)
         to implement various data structures and algorithms.
 
+        It is used to store only Wrapper Classes, but it can not store primitive data types.
+
+
         Java COLLECTION Framework Diagram:
         ---------------------------------
 
@@ -79,5 +82,12 @@ public class Main {
             System.out.println("Sorry, seat is taken");
         }
 
+        SortedMap<String, Integer> si = new TreeMap<>(Comparator.reverseOrder());
+
+        si.put("NumberOne", 7);
+        si.put("NumberTwo", 8);
+
+        System.out.println(si);
+        System.out.println(si.comparator());
     }
 }

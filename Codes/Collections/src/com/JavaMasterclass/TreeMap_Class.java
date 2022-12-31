@@ -20,7 +20,7 @@ public class TreeMap_Class {
                                      ⬆
                                      ⬆ implements
                                      ⬆
-                                  HashMap
+                                  TreeMap
 
         Creating a TreeMap:
         ------------------
