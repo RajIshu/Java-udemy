@@ -49,12 +49,29 @@ public class Theatre {
         }
     }
 
-    private class Seat {
+    private class Seat implements Comparable<Seat>{
         private final String seatNumber;
         private boolean reserved = false;
 
         public Seat(String seatNumber) {
             this.seatNumber = seatNumber;
+        }
+
+        /*
+            compareToIgnoreCase():
+            ---------------------
+            The compareToIgnoreCase() method compares two strings, ignoring lower case
+            and upper case differences.
+
+            Returns:
+                = 0, if the string is equal to the other string, ignoring case differences.
+                < 0, if the string is less than the other string
+                > 0, if the string is greater than the other string (more characters)
+        */
+
+        @Override
+        public int compareTo(Seat seat) {
+            return this.seatNumber.compareToIgnoreCase(seat.seatNumber);
         }
 
         public boolean reserve() {
