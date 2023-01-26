@@ -190,14 +190,58 @@ public class HelloApplication extends Application { // Here, Application comes f
         load() method of FXMLLoader loads an object hierarchy from the FXML document.
 
 
+        Layout (or Layout Panes):
+        ------------------------
+        Layout are containers which are used for flexible and dynamic arrangements of UI controls within a
+        scene graph of a JavaFX application.
+
+        As a window is resized, the layout pane automatically repositions and resizes the nodes it contains.
+
+        JavaFX has the following built-in layout panes:
+
+        1) FlowPane
+            - The flow pane layout wraps all the nodes in a flow whether it may be horizontal flow or it may
+              be Vertical flow.
+            - In case of Horizontal Flow, the layout organizes the nodes in the horizontal rows according
+              to the available horizontal spaces. Wraps the nodes to the next line if the horizontal space
+              is less than the total width of the nodes.
+
+        2) HBox
+            - The HBox layout arranges all the nodes in our application in a single horizontal row.
+
+        3) VBox
+            - The VBox layout arranges all the nodes in our application in a single vertical column.
+
+        4) AnchorPane
+            - The Anchor pane layout anchors the nodes in our application at a particular distance from the pane.
+            - Learn More: https://o7planning.org/10645/javafx-anchorpane
+
+        5) BorderPane
+            - The Border Pane layout arranges the nodes in our application in top, left, right, bottom and center
+              positions.
+            - Learn More: https://o7planning.org/10629/javafx-borderpane
+
+        6) StackPane
+            - The stack pane layout arranges the nodes in our application on top of another just like in a stack.
+              The node added first is placed at the bottom of the stack and the next node is placed on top of it.
+            - Learn More: https://o7planning.org/10633/javafx-stackpane
+
+        7) TilePane
+            - The Tile Pane layout adds all the nodes of our application in the form of uniformly sized tiles.
+            - TilePane is a container which is so similar to FlowPane. It arranges the consecutive subcomponents
+              on a row, and automatically pushes the subcomponents down to next line if the current line is filled
+              up. However, it differs from FlowPane because the subcomponents lie on the same size cell.
+            - Learn More: https://o7planning.org/10643/javafx-tilepane
+            
+        8) GridPane
 
 
     */
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-//        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-//        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 700, 240);
 
 
         /*
@@ -212,33 +256,35 @@ public class HelloApplication extends Application { // Here, Application comes f
               Open this link to visualize the above concepts: https://github.com/RajIshu/Java-udemy/blob/master/images/login_fxml_gridlines.png
 
         */
-        GridPane root = new GridPane();
-        root.setAlignment(Pos.CENTER);
-        root.setVgap(10);
-        root.setHgap(10);
-
-        Label greeting = new Label("Welcome to JavaFX!");
-        greeting.setText("Welcome Everyone to JavaFX!");
-        // setText(): Sets the value of the property text.
-
-        greeting.setTextFill(Color.GREEN);
-        // setTextFill(): Sets the color of the text.
-
-        // Here, only making the text bold (Keeping Family and size as default)
-//        greeting.setFont(Font.font(greeting.getFont().getFamily(), FontWeight.EXTRA_BOLD, greeting.getFont().getSize()));
-
-        // Here, Changing the font family to 'Times New Roman' and making text bold and size to 70
+//        GridPane root = new GridPane();
+//        root.setAlignment(Pos.CENTER);
+//        root.setVgap(10);
+//        root.setHgap(10);
+//
+//        Label greeting = new Label("Welcome to JavaFX!");
+//        // Label: Label is used to display a short text or an image. The label is the component that is
+//        // used to place any text information on the screen.
+//        greeting.setText("Welcome Everyone to JavaFX!");
+//        // setText(): Sets the value of the property text.
+//
+//        greeting.setTextFill(Color.GREEN);
+//        // setTextFill(): Sets the color of the text.
+//
+//        // Here, only making the text bold (Keeping Family and size as default)
+////        greeting.setFont(Font.font(greeting.getFont().getFamily(), FontWeight.EXTRA_BOLD, greeting.getFont().getSize()));
+//
+//        // Here, Changing the font family to 'Times New Roman' and making text bold and size to 70
 //        greeting.setFont(Font.font("Times New Roman", FontWeight.BOLD, 70));
+//
+//        // As window size was small for the above case so let's increase the window size by changing
+//        // the width value passed to the Scene() constructor.
+//
+//
+//        root.getChildren().add(greeting);
+//        // getChildren(): Gets the list of children of this Parent
+//
+//        Scene scene = new Scene(root, 1000, 240);
 
-        // As window size was small for the above case so let's increase the window size
-
-
-        root.getChildren().add(greeting);
-        // getChildren(): Gets the list of children of this Parent
-        System.out.println(greeting.getFont());
-
-
-        Scene scene = new Scene(root, 320, 240);
         primaryStage.setTitle("Hello JavaFX!");
         primaryStage.setScene(scene);
         primaryStage.show();

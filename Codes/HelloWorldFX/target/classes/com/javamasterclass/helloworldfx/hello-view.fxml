@@ -3,14 +3,26 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
 
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.javamasterclass.helloworldfx.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<!--<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"-->
+<!--      fx:controller="com.javamasterclass.helloworldfx.HelloController">-->
+<!--    <padding>-->
+<!--        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>-->
+<!--    </padding>-->
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<!--    <Label fx:id="welcomeText"/>-->
+<!--    <Button text="Hello!" onAction="#onHelloButtonClick"/>-->
+<!--</VBox>-->
+
+
+<?import javafx.scene.text.Font?>
+<GridPane fx:controller="com.javamasterclass.helloworldfx.HelloController"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <Label text="Welcome to JavaFX!" textFill="green">
+        <font>
+            <Font name="Times New Roman Bold" size="70"/>
+        </font>
+    </Label>
+</GridPane>
