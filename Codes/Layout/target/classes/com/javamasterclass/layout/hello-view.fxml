@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+
+<!--VBox Layout-->
+<!--<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.javamasterclass.layout.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label fx:id="welcomeText"/>
+    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+</VBox>-->
+
+<!--GridPane-->
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<GridPane fx:controller="com.javamasterclass.layout.HelloController"
+          xmlns:fx="http://javafx.com/fxml" alignment="top_center" hgap="10" vgap="10"
+          gridLinesVisible="true">
+    <!--
+        In the above Line, we can see that the alignment is set to Center.
+
+        Alignment basically decides the position of Starting Grid inside the GridPane.
+
+        hgap and vgap is gap or space between the components.
+
+        For debugging purpose, we can make the grid lines visible for better visibility of the components
+        using 'gridLinesVisible' parameter.
+
+        We can change alignment from 'center' to 'top_center', 'bottom_center', etc.
+    -->
+
+    <!--<Button text="Button 1"/>
+    <Button text="Button 2"/>
+    <Button text="Button 3"/>
+    <Button text="Very Long Button 4"/>
+    <Button text="Button 5"/>
+
+    The Above Codes for Button are without row and column parameter that's why they stacked upon each other.
+    Default Position is Row=0 and Column=0.
+
+    We can use ColumnConstraints for assigning the area/space column will occupy.
+    It can be in percentage or pixels.
+    -->
+    <!--<columnConstraints>
+        <ColumnConstraints percentWidth="50.0"/>
+        <ColumnConstraints percentWidth="50.0"/>
+    </columnConstraints>-->
+
+    <Button text="Button 1" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <Button text="Button 2" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+    <Button text="Long Very Long Very Long  Very Long Very Long Button 3" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <Button text="Button 4" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+    <Button text="Button 5" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+</GridPane>
