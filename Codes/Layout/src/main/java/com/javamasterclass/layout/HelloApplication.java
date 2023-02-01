@@ -38,6 +38,33 @@ public class HelloApplication extends Application {
         5) BorderPane
             - The Border Pane layout arranges the nodes in our application in top, left, right, bottom and center
               positions.
+            - In case of BorderPane Layout, we can place controls into one of five positions: Top, bottom, left,
+              right and center.
+
+                    ----------------------------------------------------------
+                   |                           TOP                            |
+                   |__________________________________________________________|
+                   |          |                                    |          |
+                   |          |                                    |          |
+                   |          |                                    |          |
+                   |          |                                    |          |
+                   |          |                                    |          |
+                   |          |                                    |          |
+                   |   LEFT   |              CENTER                |  RIGHT   |
+                   |          |                                    |          |
+                   |          |                                    |          |
+                   |          |                                    |          |
+                   |          |                                    |          |
+                   |          |                                    |          |
+                   |__________|____________________________________|__________|
+                   |                         BOTTOM                           |
+                   |__________________________________________________________|
+
+
+            - Now we don't have to place something into every position. When a position is empty, then no space
+              is allocated to it.
+              For example, if the right position is empty, then whatever is placed in the center position will
+              extend to the right edge of the BorderPane, sort of filling that entire right-hand section up.
             - Learn More: https://o7planning.org/10629/javafx-borderpane
 
         6) StackPane
