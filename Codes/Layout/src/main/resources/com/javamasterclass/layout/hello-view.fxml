@@ -104,16 +104,32 @@
 <Button text="Cancel" prefWidth="90"/>
 <Button text="Help" prefWidth="90"/>
 </VBox>-->
+
+
+
 <!--BorderPane (along with HBox inside it i.e., nested layout) -->
 
+<!--
 <BorderPane xmlns:fx="http://javafx.com/fxml/1"
             xmlns="http://javafx.com/javafx/17.0.2-ea"
             fx:controller="com.javamasterclass.layout.HelloController">
     <top>
         <Label text="This label is in top position" alignment="CENTER"
                BorderPane.alignment="CENTER"
-               style="-fx-border-color: blue; -fx-border-width: 2; -fx-border-style:dashed"/>
+               style="-fx-border-color: blue; -fx-border-width: 2; -fx-border-style:dashed;"/>
     </top>
+    <center>
+        <Label text="Hello, this is Center has very loooooooooooooooooooooooooooooong text"
+               style="-fx-border-color: red; -fx-border-width: 2; -fx-border-style:dashed;"/>
+    </center>
+    <left>
+        <Label text="This is at left position" alignment="CENTER"
+               style="-fx-border-color: blue; -fx-border-width: 2; -fx-border-style:dashed;"/>
+    </left>
+    <right>
+        <Label text="This is at right position"
+               style="-fx-border-color: blue; -fx-border-width: 2; -fx-border-style:dashed;"/>
+    </right>
     <bottom>
         <HBox alignment="top_right" prefWidth="768.0" spacing="10">
             <padding>
@@ -125,3 +141,50 @@
         </HBox>
     </bottom>
 </BorderPane>
+-->
+
+
+<!--FlowPane-->
+
+<!--
+<FlowPane fx:controller="com.javamasterclass.layout.HelloController"
+          xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea"
+          orientation="HORIZONTAL">
+    <Button text="Button One"/>
+    <Button text="Button Two"/>
+    <Button text="Button Three"/>
+    <Button text="Button Four"/>
+    <Button text="Button Five"/>
+    <Button text="Button Six"/>
+    <Button text="Button Seven"/>
+    <Button text="Button Eight"/>
+    <Button text="Button Nine"/>
+    <Button text="Button Ten"/>
+</FlowPane>
+-->
+
+
+<!--TilePane-->
+
+<!--<TilePane fx:controller="com.javamasterclass.layout.HelloApplication"
+          xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea">
+    <Button text="Button One"/>
+    <Button text="Button Two"/>
+    <Button text="Button Three"/>
+    <Button text="Button Four"/>
+    <Button text="Button Five"/>
+    <Button text="Button Six"/>
+    <Button text="Button Seven"/>
+    <Button text="Button Eight"/>
+    <Button text="Button Nine"/>
+    <Button text="Button Ten"/>
+</TilePane>-->
+
+
+<!--StackPane-->
+
+<StackPane fx:controller="com.javamasterclass.layout.HelloController"
+           xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea">
+    <Button text="Button One"/>
+    <Label text="This is a Label"/>
+</StackPane>
